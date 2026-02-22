@@ -14,6 +14,8 @@ import { saveWorkspace, getWorkspace, clearWorkspace } from '../../utils/workspa
 import SuccessState from './shared/SuccessState'
 import PrivacyBadge from './shared/PrivacyBadge'
 import { NativeToolLayout } from './shared/NativeToolLayout'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 
 // File Item Type
 type PdfFile = {
@@ -378,11 +380,18 @@ export default function MergeTool() {
   )
 
   return (
-    <NativeToolLayout
-      title="Merge PDF"
-      description="Combine multiple PDF files into one document. Processed entirely on your device."
-      actions={files.length > 0 && !objectUrl && <ActionButton />}
-    >
+    <>
+      <SEO 
+        title={toolSEO.merge.title}
+        description={toolSEO.merge.description}
+        keywords={toolSEO.merge.keywords}
+        path="#/merge"
+      />
+      <NativeToolLayout
+        title="Merge PDF"
+        description="Combine multiple PDF files into one document. Processed entirely on your device."
+        actions={files.length > 0 && !objectUrl && <ActionButton />}
+      >
       <div 
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
@@ -509,5 +518,6 @@ export default function MergeTool() {
         <PrivacyBadge />
       </div>
     </NativeToolLayout>
+    </>
   )
 }

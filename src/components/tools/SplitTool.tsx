@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 import { Loader2, Scissors, Check, Plus, Lock, ArrowRight, X, Zap } from 'lucide-react'
 import JSZip from 'jszip'
 import { toast } from 'sonner'
@@ -173,8 +175,10 @@ export default function SplitTool() {
   )
 
   return (
-    <NativeToolLayout
-      title="Split PDF"
+    <>
+      <SEO title={toolSEO.split.title} description={toolSEO.split.description} keywords={toolSEO.split.keywords} path="#/split" />
+      <NativeToolLayout
+        title="Split PDF"
       description="Select pages visually or by range to extract them. Everything stays on your device."
       actions={pdfData && !pdfData.isLocked && !objectUrl && <ActionButton />}
     >
@@ -328,5 +332,6 @@ export default function SplitTool() {
       )}
       <PrivacyBadge />
     </NativeToolLayout>
+    </>
   )
 }

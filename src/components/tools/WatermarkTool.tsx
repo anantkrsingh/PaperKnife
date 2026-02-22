@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 import { Type, Lock, Loader2, Palette, Eye } from 'lucide-react'
 import { PDFDocument, rgb, degrees, StandardFonts } from 'pdf-lib'
 import { toast } from 'sonner'
@@ -109,7 +111,9 @@ export default function WatermarkTool() {
   )
 
   return (
-    <NativeToolLayout title="Watermark" description="Add secure text overlays to your documents locally." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
+    <>
+      <SEO title={toolSEO.watermark.title} description={toolSEO.watermark.description} keywords={toolSEO.watermark.keywords} path="#/watermark" />
+      <NativeToolLayout title="Watermark" description="Add secure text overlays to your documents locally." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       
       {!pdfData ? (
@@ -219,5 +223,6 @@ export default function WatermarkTool() {
       )}
       <PrivacyBadge />
     </NativeToolLayout>
+    </>
   )
 }

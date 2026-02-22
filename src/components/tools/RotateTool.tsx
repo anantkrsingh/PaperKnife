@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 import { RotateCw, Lock, RefreshCcw, Loader2, X } from 'lucide-react'
 import { PDFDocument, degrees } from 'pdf-lib'
 import { toast } from 'sonner'
@@ -99,7 +101,9 @@ export default function RotateTool() {
   )
 
   return (
-    <NativeToolLayout title="Rotate PDF" description="Tap individual pages to rotate 90 degrees." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
+    <>
+      <SEO title={toolSEO.rotate.title} description={toolSEO.rotate.description} keywords={toolSEO.rotate.keywords} path="#/rotate-pdf" />
+      <NativeToolLayout title="Rotate PDF" description="Tap individual pages to rotate 90 degrees." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       
       {!pdfData ? (
@@ -178,5 +182,6 @@ export default function RotateTool() {
       )}
       <PrivacyBadge />
     </NativeToolLayout>
+    </>
   )
 }

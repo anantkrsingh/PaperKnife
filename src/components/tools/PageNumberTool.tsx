@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 import { Hash, Lock, Loader2, Eye } from 'lucide-react'
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib'
 import { toast } from 'sonner'
@@ -104,7 +106,9 @@ export default function PageNumberTool() {
   }
 
   return (
-    <NativeToolLayout title="Page Numbers" description="Add custom numbering to your PDF automatically." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
+    <>
+      <SEO title={toolSEO.pageNumbers.title} description={toolSEO.pageNumbers.description} keywords={toolSEO.pageNumbers.keywords} path="#/page-numbers" />
+      <NativeToolLayout title="Page Numbers" description="Add custom numbering to your PDF automatically." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       
       {!pdfData ? (
@@ -177,5 +181,6 @@ export default function PageNumberTool() {
       )}
       <PrivacyBadge />
     </NativeToolLayout>
+    </>
   )
 }

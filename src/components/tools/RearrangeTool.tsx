@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 import { Loader2, Lock, Grid, Move, RefreshCcw, X } from 'lucide-react'
 import { PDFDocument } from 'pdf-lib'
 import { DndContext, closestCenter, KeyboardSensor, useSensor, useSensors, DragEndEvent, TouchSensor, MouseSensor } from '@dnd-kit/core'
@@ -126,7 +128,9 @@ export default function RearrangeTool() {
   )
 
   return (
-    <NativeToolLayout title="Rearrange PDF" description="Drag and drop to reorder pages visually." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
+    <>
+      <SEO title={toolSEO.rearrange.title} description={toolSEO.rearrange.description} keywords={toolSEO.rearrange.keywords} path="#/rearrange-pdf" />
+      <NativeToolLayout title="Rearrange PDF" description="Drag and drop to reorder pages visually." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       
       {!pdfData ? (
@@ -187,5 +191,6 @@ export default function RearrangeTool() {
       )}
       <PrivacyBadge />
     </NativeToolLayout>
+    </>
   )
 }

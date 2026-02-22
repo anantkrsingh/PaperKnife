@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 import { Loader2, ShieldAlert, Upload, X, FileCheck } from 'lucide-react'
 import { PDFDocument } from 'pdf-lib'
 import { toast } from 'sonner'
@@ -63,7 +65,9 @@ export default function RepairTool() {
   )
 
   return (
-    <NativeToolLayout title="Repair PDF" description="Fix corrupted or unreadable PDF files by rebuilding structure." actions={originalFile && !downloadUrl && <ActionButton />}>
+    <>
+      <SEO title={toolSEO.repair.title} description={toolSEO.repair.description} keywords={toolSEO.repair.keywords} path="#/repair" />
+      <NativeToolLayout title="Repair PDF" description="Fix corrupted or unreadable PDF files by rebuilding structure." actions={originalFile && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       
       {!originalFile ? (
@@ -107,10 +111,11 @@ export default function RepairTool() {
         <ShieldAlert className="text-amber-500 shrink-0" size={20} />
         <div className="text-xs text-amber-700 dark:text-amber-400 leading-relaxed text-left">
           <p className="font-black mb-1 uppercase tracking-widest text-[10px]">Technical Protocol:</p>
-          PaperKnife rebuilds the internal cross-reference table and regenerates the file structure from scratch. This can restore access to many files that "cannot be opened."
+          PDFMachine rebuilds the internal cross-reference table and regenerates the file structure from scratch. This can restore access to many files that "cannot be opened."
         </div>
       </div>
       <PrivacyBadge />
     </NativeToolLayout>
+    </>
   )
 }

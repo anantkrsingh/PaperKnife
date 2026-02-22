@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 import { Loader2, Copy, FileText, Lock, Check, Download, Zap, ScanSearch, ArrowRight, X } from 'lucide-react'
 import { toast } from 'sonner'
 import Tesseract from 'tesseract.js'
@@ -111,7 +113,9 @@ export default function PdfToTextTool() {
   )
 
   return (
-    <NativeToolLayout title="PDF to Text" description="Extract text using fast scan or deep local OCR." actions={pdfData && !pdfData.isLocked && !extractedText && <ActionButton />}>
+    <>
+      <SEO title={toolSEO.pdfToText.title} description={toolSEO.pdfToText.description} keywords={toolSEO.pdfToText.keywords} path="#/pdf-to-text" />
+      <NativeToolLayout title="PDF to Text" description="Extract text using fast scan or deep local OCR." actions={pdfData && !pdfData.isLocked && !extractedText && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       {!pdfData ? (
         <div onClick={() => !isProcessing && fileInputRef.current?.click()} className="border-4 border-dashed border-gray-100 dark:border-zinc-900 rounded-[2.5rem] p-12 text-center hover:bg-rose-50 dark:hover:bg-rose-900/10 transition-all cursor-pointer group">
@@ -198,5 +202,6 @@ export default function PdfToTextTool() {
       )}
       <PrivacyBadge />
     </NativeToolLayout>
+    </>
   )
 }

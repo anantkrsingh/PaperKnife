@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 import { Lock, ShieldCheck, Loader2, ArrowRight, X } from 'lucide-react'
 import { PDFDocument } from 'pdf-lib'
 import { encryptPDF } from '@pdfsmaller/pdf-encrypt-lite'
@@ -100,7 +102,9 @@ export default function ProtectTool() {
   )
 
   return (
-    <NativeToolLayout title="Protect PDF" description="Add strong encryption to your documents. Processed locally." actions={pdfData && !pdfData.isLocked && !objectUrl && <ActionButton />}>
+    <>
+      <SEO title={toolSEO.protect.title} description={toolSEO.protect.description} keywords={toolSEO.protect.keywords} path="#/protect" />
+      <NativeToolLayout title="Protect PDF" description="Add strong encryption to your documents. Processed locally." actions={pdfData && !pdfData.isLocked && !objectUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={handleFileSelect} />
       {!pdfData ? (
         <button 
@@ -146,6 +150,7 @@ export default function ProtectTool() {
       )}
       <PrivacyBadge />
     </NativeToolLayout>
+    </>
   )
 }
           

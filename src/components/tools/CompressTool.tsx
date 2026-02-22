@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 import { Zap, Loader2, Plus, X, FileIcon, Download, ChevronLeft, ChevronRight, Maximize2, ArrowRight } from 'lucide-react'
 import { toast } from 'sonner'
 import JSZip from 'jszip'
@@ -239,7 +241,9 @@ export default function CompressTool() {
   )
 
   return (
-    <NativeToolLayout title="Compress PDF" description="Reduce file size while maintaining quality. Everything stays on your device." actions={files.length > 0 && !showSuccess && <ActionButton />}>
+    <>
+      <SEO title={toolSEO.compress.title} description={toolSEO.compress.description} keywords={toolSEO.compress.keywords} path="#/compress" />
+      <NativeToolLayout title="Compress PDF" description="Reduce file size while maintaining quality. Everything stays on your device." actions={files.length > 0 && !showSuccess && <ActionButton />}>
       <input type="file" multiple accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files && handleFiles(e.target.files)} />
       
       {files.length === 0 ? (
@@ -351,5 +355,6 @@ export default function CompressTool() {
       )}
       <PrivacyBadge />
     </NativeToolLayout>
+    </>
   )
 }

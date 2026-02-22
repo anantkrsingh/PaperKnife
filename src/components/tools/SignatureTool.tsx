@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 import { Loader2, Lock, Image as ImageIcon, ArrowRight } from 'lucide-react'
 import { PDFDocument } from 'pdf-lib'
 import { toast } from 'sonner'
@@ -78,7 +80,9 @@ export default function SignatureTool() {
   )
 
   return (
-    <NativeToolLayout title="Signature" description="Sign any PDF by dragging your signature image." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
+    <>
+      <SEO title={toolSEO.signature.title} description={toolSEO.signature.description} keywords={toolSEO.signature.keywords} path="#/signature" />
+      <NativeToolLayout title="Signature" description="Sign any PDF by dragging your signature image." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       <input type="file" accept="image/*" className="hidden" ref={signatureInputRef} onChange={(e) => { const file = e.target.files?.[0]; if (file) { setSignatureFile(file); setSignatureImg(URL.createObjectURL(file)) } }} />
       {!pdfData ? (
@@ -127,5 +131,6 @@ export default function SignatureTool() {
       )}
       <PrivacyBadge />
     </NativeToolLayout>
+    </>
   )
 }

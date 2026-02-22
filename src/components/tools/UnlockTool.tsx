@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 import { Lock, Unlock, Loader2, X } from 'lucide-react'
 import { PDFDocument } from 'pdf-lib'
 import { toast } from 'sonner'
@@ -72,7 +74,9 @@ export default function UnlockTool() {
   )
 
   return (
-    <NativeToolLayout title="Unlock PDF" description="Remove passwords and restrictions permanently. Processed locally." actions={pdfData && !objectUrl && <ActionButton />}>
+    <>
+      <SEO title={toolSEO.unlock.title} description={toolSEO.unlock.description} keywords={toolSEO.unlock.keywords} path="#/unlock" />
+      <NativeToolLayout title="Unlock PDF" description="Remove passwords and restrictions permanently. Processed locally." actions={pdfData && !objectUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={handleFileSelect} />
       {!pdfData ? (
         <button 
@@ -117,5 +121,6 @@ export default function UnlockTool() {
       )}
       <PrivacyBadge />
     </NativeToolLayout>
+    </>
   )
 }

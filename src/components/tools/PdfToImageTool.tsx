@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import SEO from '../SEO'
+import { toolSEO } from '../../utils/seoData'
 import { Image as ImageIcon, Lock, Loader2, ArrowRight, X } from 'lucide-react'
 import JSZip from 'jszip'
 import { toast } from 'sonner'
@@ -102,7 +104,9 @@ export default function PdfToImageTool() {
   )
 
   return (
-    <NativeToolLayout title="PDF to Image" description="Convert document pages into high-quality images." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
+    <>
+      <SEO title={toolSEO.pdfToImage.title} description={toolSEO.pdfToImage.description} keywords={toolSEO.pdfToImage.keywords} path="#/pdf-to-image" />
+      <NativeToolLayout title="PDF to Image" description="Convert document pages into high-quality images." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       {!pdfData ? (
         <button 
@@ -144,5 +148,6 @@ export default function PdfToImageTool() {
       )}
       <PrivacyBadge />
     </NativeToolLayout>
+    </>
   )
 }

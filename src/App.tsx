@@ -1,5 +1,5 @@
 /**
- * PaperKnife - The Swiss Army Knife for PDFs
+ * PDFMachine - The Swiss Army Knife for PDFs
  * Copyright (C) 2026 potatameister
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -24,6 +24,7 @@ import { PipelineProvider, usePipeline } from './utils/pipelineContext'
 import { ViewModeProvider } from './utils/viewModeContext'
 import { clearActivity, updateLastSeen, getLastSeen } from './utils/recentActivity'
 import ScrollToTop from './components/ScrollToTop'
+import SEO from './components/SEO'
 
 // Critical Views - No lazy loading to prevent dynamic import errors on Android
 import WebView from './components/WebView'
@@ -348,11 +349,14 @@ function App() {
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
                 <Route path="/" element={
-                  viewMode === 'web' ? (
-                    <WebView tools={activeTools} />
-                  ) : (
-                    <AndroidView toggleTheme={toggleTheme} theme={theme === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme} onFileSelect={(file) => handleGlobalDrop([file] as any)} />
-                  )
+                  <>
+                    <SEO />
+                    {viewMode === 'web' ? (
+                      <WebView tools={activeTools} />
+                    ) : (
+                      <AndroidView toggleTheme={toggleTheme} theme={theme === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme} onFileSelect={(file) => handleGlobalDrop([file] as any)} />
+                    )}
+                  </>
                 } />
                 <Route path="/android-tools" element={<AndroidToolsView tools={activeTools} />} />
                 <Route path="/android-history" element={<AndroidHistoryView />} />
