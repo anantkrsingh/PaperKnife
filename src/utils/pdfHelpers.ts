@@ -1,5 +1,5 @@
 /**
- * PDFMachine - The Swiss Army Knife for PDFs
+ * PDF Proxy - The Swiss Army Knife for PDFs
  * Copyright (C) 2026 potatameister
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -130,7 +130,7 @@ export const shareFile = async (data: Uint8Array | string, fileName: string, mim
 
       await Share.share({
         title: fileName,
-        text: `Shared via PDFMachine`,
+        text: `Shared via PDF Proxy`,
         url: result.uri,
         dialogTitle: 'Share PDF'
       });
@@ -153,7 +153,7 @@ export const shareFile = async (data: Uint8Array | string, fileName: string, mim
         await navigator.share({
           files: [file],
           title: fileName,
-          text: 'Shared via PDFMachine'
+          text: 'Shared via PDF Proxy'
         });
         return true;
       } catch (e) {

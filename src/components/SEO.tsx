@@ -8,7 +8,7 @@ interface SEOProps {
 }
 
 const SEO = ({ 
-  title = 'PDFMachine — Private & Offline PDF Tools',
+  title = 'PDF Proxy — Private & Offline PDF Tools',
   description = '100% Client-Side PDF utilities. Merge, Split, Compress, Sign, and Protect PDFs without uploading them to any server. Absolute privacy for your documents.',
   keywords = 'pdf tools, private pdf, offline pdf merge, split pdf locally, compress pdf browser, electronic signature, pdf to image, no upload pdf, pdf editor, free pdf tools, secure pdf, pdf converter',
   path = ''
@@ -19,7 +19,7 @@ const SEO = ({
     ? normalizedPath.startsWith('/') ? normalizedPath : `/${normalizedPath}`
     : ''
   const fullUrl = `${siteUrl}${canonicalPath}`
-  const fullTitle = title === 'PDFMachine — Private & Offline PDF Tools' ? title : `${title} | PDFMachine`
+  const fullTitle = title === 'PDF Proxy — Private & Offline PDF Tools' ? title : `${title} | PDF Proxy`
 
   return (
     <Helmet>

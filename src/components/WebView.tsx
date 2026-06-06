@@ -1,5 +1,5 @@
 /**
- * PDFMachine - Professional Web Dashboard
+ * PDF Proxy - Professional Web Dashboard
  * A desktop-optimized, sidebar-driven interface.
  */
 

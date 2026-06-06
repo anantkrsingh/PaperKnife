@@ -1,5 +1,5 @@
 /**
- * PDFMachine - About & Protocol Specification
+ * PDF Proxy - About & Protocol Specification
  * Professional-grade technical details and sustainability protocol.
  */
 
@@ -69,7 +69,7 @@ const AboutWeb = () => {
             <span className="text-rose-500 font-black">Human Right.</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-500 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
-            PDFMachine is an absolute document engine. No servers, no tracking, no compromises. We transform your browser into a self-contained document laboratory.
+            PDF Proxy is an absolute document engine. No servers, no tracking, no compromises. We transform your browser into a self-contained document laboratory.
           </p>
         </div>
       </section>
@@ -84,7 +84,7 @@ const AboutWeb = () => {
            <div className="flex-1 text-center md:text-left relative z-10">
               <h3 className="text-3xl font-black tracking-tighter mb-3 leading-tight">Fuel the Engine.</h3>
               <p className="text-rose-100 font-medium text-base mb-6 max-w-xl leading-relaxed">
-                 PDFMachine is self-funded and ad-free. Your support ensures the project stays alive and free for everyone.
+                 PDF Proxy is self-funded and ad-free. Your support ensures the project stays alive and free for everyone.
               </p>
               <div className="flex flex-wrap justify-center md:justify-start gap-3">
                  <a href="https://github.com/sponsors/potatameister" target="_blank" className="px-8 py-3.5 bg-white text-rose-600 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:scale-105 transition-transform shadow-lg flex items-center gap-2">
@@ -112,14 +112,14 @@ const AboutWeb = () => {
               <span className="text-rose-500">Absolute Sovereignty.</span>
             </h2>
             <p className="text-gray-500 dark:text-zinc-400 text-sm font-medium leading-relaxed">
-              PDFMachine rejects the trade-off between convenience and privacy. We've built an engine that runs where the user is, ensuring your sensitive data never crosses a network boundary.
+              PDF Proxy rejects the trade-off between convenience and privacy. We've built an engine that runs where the user is, ensuring your sensitive data never crosses a network boundary.
             </p>
             <div className="p-6 bg-white dark:bg-zinc-900 rounded-[2rem] border border-gray-100 dark:border-white/5 shadow-sm">
                <h4 className="font-black text-[10px] uppercase tracking-widest text-emerald-500 mb-3 flex items-center gap-2">
                   <ServerOffIcon size={14} /> Zero Infrastructure
                </h4>
                <p className="text-xs text-gray-500 dark:text-zinc-400 font-medium leading-relaxed">
-                  We operate no backend. No databases. No file caches. PDFMachine is a static distribution of code that activates your browser's existing power.
+                  We operate no backend. No databases. No file caches. PDF Proxy is a static distribution of code that activates your browser's existing power.
                </p>
             </div>
           </div>
@@ -139,7 +139,7 @@ const AboutWeb = () => {
              </SpecItem>
 
              <SpecItem title="Radical Transparency" icon={CodeIcon}>
-                PDFMachine is <span className="text-rose-500 font-bold">100% Open Source</span> under the <span className="text-rose-500 font-bold">GNU AGPL v3</span> license. This gives you the right to audit every line of code and guarantees the engine remains free.
+                PDF Proxy is <span className="text-rose-500 font-bold">100% Open Source</span> under the <span className="text-rose-500 font-bold">GNU AGPL v3</span> license. This gives you the right to audit every line of code and guarantees the engine remains free.
              </SpecItem>
 
              <SpecItem title="Privacy Nodes" icon={ShieldIcon}>
@@ -184,7 +184,7 @@ const AboutAPK = () => {
           <div className="w-20 h-20 bg-gray-50 dark:bg-black rounded-[1.5rem] flex items-center justify-center shadow-inner mb-4">
             <PDFMachineLogo size={40} iconColor="#F43F5E" partColor="currentColor" />
           </div>
-          <h2 className="text-2xl font-black tracking-tighter dark:text-white leading-none mb-1">PDFMachine</h2>
+          <h2 className="text-2xl font-black tracking-tighter dark:text-white leading-none mb-1">PDF Proxy</h2>
           <p className="text-[9px] font-black uppercase tracking-widest text-rose-500">v1.0.9 Stable • Absolute Privacy</p>
         </div>
 
@@ -201,7 +201,7 @@ const AboutAPK = () => {
                  <h3 className="text-lg font-black uppercase tracking-tight">Fuel the Engine</h3>
               </div>
               <p className="text-sm font-medium text-rose-100 leading-relaxed mb-6">
-                 We are 100% self-funded. Your support ensures PDFMachine stays free and open for everyone.
+                 We are 100% self-funded. Your support ensures PDF Proxy stays free and open for everyone.
               </p>
               <div className="grid grid-cols-2 gap-3">
                  <a href="https://github.com/sponsors/potatameister" target="_blank" className="flex items-center justify-center gap-2 py-3 bg-white text-rose-600 rounded-xl font-black uppercase text-[9px] tracking-widest shadow-sm active:scale-95 transition-transform">
@@ -222,7 +222,7 @@ const AboutAPK = () => {
            
            <div className="divide-y divide-gray-50 dark:divide-white/5 px-2">
               <SpecItem title="How it Works" icon={CpuIcon}>
-                Every action you perform—merging, splitting, or encrypting—happens locally on your device's CPU. PDFMachine uses an internal local engine powered by <span className="text-rose-500 font-bold">pdf-lib</span> and <span className="text-rose-500 font-bold">WebAssembly</span>. No data ever leaves your hardware.
+                Every action you perform—merging, splitting, or encrypting—happens locally on your device's CPU. PDF Proxy uses an internal local engine powered by <span className="text-rose-500 font-bold">pdf-lib</span> and <span className="text-rose-500 font-bold">WebAssembly</span>. No data ever leaves your hardware.
               </SpecItem>
 
               <SpecItem title="Data Privacy" icon={PrivacyIcon}>
@@ -230,11 +230,11 @@ const AboutAPK = () => {
               </SpecItem>
 
               <SpecItem title="Deep Metadata Clean" icon={DiskIcon}>
-                Privacy isn't just about servers. Most tools leave digital breadcrumbs in the PDF metadata. PDFMachine's "Deep Clean" protocol sanitizes every document, purging Producer, Creator, and XMP metadata to ensure absolute anonymity.
+                Privacy isn't just about servers. Most tools leave digital breadcrumbs in the PDF metadata. PDF Proxy's "Deep Clean" protocol sanitizes every document, purging Producer, Creator, and XMP metadata to ensure absolute anonymity.
               </SpecItem>
 
               <SpecItem title="Open Source Integrity" icon={CodeIcon}>
-                Trust is earned through transparency. PDFMachine is <span className="text-rose-500 font-bold">100% open-source</span> under the <span className="text-rose-500 font-bold">GNU AGPL v3</span> license. This ensures the engine remains free, auditable, and community-driven forever.
+                Trust is earned through transparency. PDF Proxy is <span className="text-rose-500 font-bold">100% open-source</span> under the <span className="text-rose-500 font-bold">GNU AGPL v3</span> license. This ensures the engine remains free, auditable, and community-driven forever.
               </SpecItem>
 
               <SpecItem title="Zero Infrastructure" icon={ServerOffIcon}>

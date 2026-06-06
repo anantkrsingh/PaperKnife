@@ -1,5 +1,5 @@
 /**
- * PDFMachine - Privacy Protocol
+ * PDF Proxy - Privacy Protocol
  * Absolute data sovereignty and zero-telemetry specification.
  */
 
@@ -32,7 +32,7 @@ const PrivacyWeb = () => {
                 <span className="text-emerald-500 font-black">of Silence.</span>
               </h1>
               <p className="text-lg text-gray-500 dark:text-zinc-400 font-medium max-w-lg leading-relaxed">
-                PDFMachine isn't just "private" by policy; it's private by architecture. We've eliminated the server entirely, ensuring that "No Data Found" is a technical reality, not just a promise.
+                PDF Proxy isn't just "private" by policy; it's private by architecture. We've eliminated the server entirely, ensuring that "No Data Found" is a technical reality, not just a promise.
               </p>
             </div>
           </div>
@@ -69,7 +69,7 @@ const PrivacyWeb = () => {
             <p className="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed font-medium">
               {isFirebaseAnalyticsEnabled
                 ? 'Firebase Analytics is enabled for anonymous route usage only. Document names, file contents, and processing activity never leave your device.'
-                : 'Analytics is disabled in this build. No tracking pixels, cookies, or user identifiers are collected by PDFMachine.'}
+                : 'Analytics is disabled in this build. No tracking pixels, cookies, or user identifiers are collected by PDF Proxy.'}
             </p>
           </div>
 
@@ -142,7 +142,7 @@ const PrivacyAPK = () => {
              title="No Telemetry" 
              desc={isFirebaseAnalyticsEnabled
                ? 'Firebase Analytics records anonymous route usage only. Document names, file contents, and processing activity stay on your device.'
-               : 'Analytics is disabled in this build. No tracking, analytics, or user identifiers are collected by PDFMachine.'} 
+               : 'Analytics is disabled in this build. No tracking, analytics, or user identifiers are collected by PDF Proxy.'} 
              color="text-blue-500 bg-blue-50 dark:bg-blue-900/20"
            />
            <PrivacyItem 
@@ -166,7 +166,7 @@ const PrivacyAPK = () => {
            </div>
            <h3 className="text-lg font-black uppercase tracking-tight mb-3">Integrity Pledge</h3>
            <p className="text-xs text-zinc-400 leading-relaxed font-medium mb-6">
-              PDFMachine is a transparent document workspace. We believe your data belongs to you, and we build tools that make that technically enforceable.
+              PDF Proxy is a transparent document workspace. We believe your data belongs to you, and we build tools that make that technically enforceable.
            </p>
            <a 
              href="https://github.com/potatameister/PaperKnife" 

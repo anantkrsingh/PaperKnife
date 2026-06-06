@@ -85,23 +85,23 @@ export const toolSEO = {
     keywords: 'repair pdf, fix corrupted pdf, pdf repair tool, fix damaged pdf, recover pdf, pdf recovery'
   },
   about: {
-    title: 'About PDFMachine',
-    description: 'Learn about PDFMachine - the privacy-focused, offline PDF toolkit. Open source and completely free.',
+    title: 'About PDF Proxy',
+    description: 'Learn about PDF Proxy - the privacy-focused, offline PDF toolkit. Open source and completely free.',
     keywords: 'about pdfmachine, pdf tools, open source pdf, privacy pdf tools, offline pdf editor'
   },
   privacy: {
     title: 'Privacy Policy',
-    description: 'PDFMachine Privacy Policy. Your files never leave your device. Optional analytics only records anonymous route usage when enabled.',
+    description: 'PDF Proxy Privacy Policy. Your files never leave your device. Optional analytics only records anonymous route usage when enabled.',
     keywords: 'privacy policy, data privacy, pdf privacy, secure pdf tools, no upload pdf'
   },
   settings: {
     title: 'Settings',
-    description: 'Configure PDFMachine settings including theme, auto-wipe timer, and privacy preferences.',
+    description: 'Configure PDF Proxy settings including theme, auto-wipe timer, and privacy preferences.',
     keywords: 'settings, preferences, pdf tool settings, theme settings, privacy settings'
   },
   thanks: {
     title: 'Acknowledgments',
-    description: 'Special thanks to the open source libraries and contributors that make PDFMachine possible.',
+    description: 'Special thanks to the open source libraries and contributors that make PDF Proxy possible.',
     keywords: 'acknowledgments, credits, open source, contributors, thanks'
   }
 }

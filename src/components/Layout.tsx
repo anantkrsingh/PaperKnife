@@ -134,7 +134,7 @@ export default function Layout({ children, theme: _theme, toggleTheme: _toggleTh
               )}
               <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0">
                 <PDFMachineLogo size={Capacitor.isNativePlatform() ? 24 : 28} iconColor="#F43F5E" />
-                <span className="font-black tracking-tighter text-lg md:text-xl text-gray-900 hidden xs:block">PDFMachine</span>
+                <span className="font-black tracking-tighter text-lg md:text-xl text-gray-900 hidden xs:block">PDF Proxy</span>
               </Link>
               <div className="relative min-w-0" ref={dropdownRef}>
                 <Button onClick={() => setIsDropdownOpen(!isDropdownOpen)} variant={isDropdownOpen ? 'contained' : 'outlined'} size="small" sx={{ minWidth: 0, px: { xs: 1.5, md: 2 }, py: 1, borderRadius: 1, fontSize: { xs: 10, md: 12 }, fontWeight: 900, letterSpacing: '0.22em', textTransform: 'uppercase', whiteSpace: 'nowrap', color: isDropdownOpen ? 'white' : 'text.secondary', borderColor: 'divider', bgcolor: isDropdownOpen ? 'primary.main' : 'rgba(255,255,255,0.8)', '&:hover': { bgcolor: isDropdownOpen ? 'primary.dark' : 'rgba(239, 71, 111, 0.08)', borderColor: 'primary.main' } }} endIcon={<ChevronDownIcon size={14} className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />}>
@@ -226,7 +226,7 @@ export default function Layout({ children, theme: _theme, toggleTheme: _toggleTh
               <div className="col-span-2 md:col-span-6 space-y-4">
                 <Link to="/" className="flex items-center gap-2.5 text-gray-900 dark:text-white group w-fit">
                   <PDFMachineLogo size={22} iconColor="#F43F5E" partColor="currentColor" />
-                  <span className="font-bold tracking-tight text-lg group-hover:text-rose-500 transition-colors">PDFMachine</span>
+                  <span className="font-bold tracking-tight text-lg group-hover:text-rose-500 transition-colors">PDF Proxy</span>
                 </Link>
                 <p className="text-gray-500 dark:text-zinc-500 text-xs leading-relaxed max-w-sm">
                   The privacy-first PDF toolkit. 100% client-side logic. <br />
@@ -263,7 +263,7 @@ export default function Layout({ children, theme: _theme, toggleTheme: _toggleTh
             </div>
 
             <div className="pt-6 border-t border-gray-100 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-gray-400 dark:text-zinc-600 font-medium">
-              <p>© 2026 PDFMachine Project. No cookies used.</p>
+              <p>© 2026 PDF Proxy Project. No cookies used.</p>
               <div className="flex gap-6 items-center">
                 <a href="https://github.com/potatameister" target="_blank" className="hover:text-gray-900 dark:hover:text-white transition-colors">@potatameister</a>
               </div>
