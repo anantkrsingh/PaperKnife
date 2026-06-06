@@ -81,7 +81,7 @@ export default function SignatureTool() {
 
   return (
     <>
-      <SEO title={toolSEO.signature.title} description={toolSEO.signature.description} keywords={toolSEO.signature.keywords} path="#/signature" />
+      <SEO title={toolSEO.signature.title} description={toolSEO.signature.description} keywords={toolSEO.signature.keywords} path="/signature" />
       <NativeToolLayout title="Signature" description="Sign any PDF by dragging your signature image." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       <input type="file" accept="image/*" className="hidden" ref={signatureInputRef} onChange={(e) => { const file = e.target.files?.[0]; if (file) { setSignatureFile(file); setSignatureImg(URL.createObjectURL(file)) } }} />

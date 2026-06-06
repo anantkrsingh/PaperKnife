@@ -176,7 +176,7 @@ export default function SplitTool() {
 
   return (
     <>
-      <SEO title={toolSEO.split.title} description={toolSEO.split.description} keywords={toolSEO.split.keywords} path="#/split" />
+      <SEO title={toolSEO.split.title} description={toolSEO.split.description} keywords={toolSEO.split.keywords} path="/split" />
       <NativeToolLayout
         title="Split PDF"
       description="Select pages visually or by range to extract them. Everything stays on your device."

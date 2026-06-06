@@ -102,7 +102,7 @@ export default function RotateTool() {
 
   return (
     <>
-      <SEO title={toolSEO.rotate.title} description={toolSEO.rotate.description} keywords={toolSEO.rotate.keywords} path="#/rotate-pdf" />
+      <SEO title={toolSEO.rotate.title} description={toolSEO.rotate.description} keywords={toolSEO.rotate.keywords} path="/rotate-pdf" />
       <NativeToolLayout title="Rotate PDF" description="Tap individual pages to rotate 90 degrees." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       

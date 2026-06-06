@@ -14,7 +14,7 @@ import {
   RotateCw, Type, Hash, Tags, FileText, ArrowUpDown, PenTool, 
   Wrench, ImagePlus, FileImage, Palette, X, ChevronDown
 } from 'lucide-react'
-import { HashRouter, Routes, Route, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { Toaster, toast } from 'sonner'
 import { Capacitor } from '@capacitor/core'
 import { Filesystem } from '@capacitor/filesystem'
@@ -25,6 +25,7 @@ import { ViewModeProvider } from './utils/viewModeContext'
 import { clearActivity, updateLastSeen, getLastSeen } from './utils/recentActivity'
 import ScrollToTop from './components/ScrollToTop'
 import SEO from './components/SEO'
+import { trackPageView } from './utils/firebaseAnalytics'
 
 // Critical Views - No lazy loading to prevent dynamic import errors on Android
 import WebView from './components/WebView'
@@ -80,6 +81,22 @@ export const IS_OCR_DISABLED = import.meta.env.VITE_DISABLE_OCR === 'true'
 export const activeTools = IS_OCR_DISABLED 
   ? tools.filter(t => t.path !== '/pdf-to-text') 
   : tools
+
+const routerBasename = (() => {
+  const base = import.meta.env.BASE_URL
+  if (!base || base === './' || base === '/') return '/'
+  return base.endsWith('/') ? base.slice(0, -1) : base
+})()
+
+function AnalyticsPageViewTracker() {
+  const location = useLocation()
+
+  useEffect(() => {
+    trackPageView(`${location.pathname}${location.search}`)
+  }, [location.pathname, location.search])
+
+  return null
+}
 
 function QuickDropModal({ file, onClear, onBack }: { file: File, onClear: () => void, onBack?: () => void }) {
   const navigate = useNavigate()
@@ -308,8 +325,9 @@ function App() {
   }
 
   return (
-    <HashRouter>
+    <BrowserRouter basename={routerBasename}>
       <ScrollToTop />
+      <AnalyticsPageViewTracker />
       <ViewModeProvider viewMode={viewMode} setViewMode={setViewMode}>
         <PipelineProvider>
           <Layout theme={theme === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme} toggleTheme={toggleTheme} tools={activeTools} onFileDrop={handleGlobalDrop} viewMode={viewMode}>
@@ -400,7 +418,7 @@ function App() {
           </Layout>
         </PipelineProvider>
       </ViewModeProvider>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 

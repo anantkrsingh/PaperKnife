@@ -105,7 +105,7 @@ export default function PdfToImageTool() {
 
   return (
     <>
-      <SEO title={toolSEO.pdfToImage.title} description={toolSEO.pdfToImage.description} keywords={toolSEO.pdfToImage.keywords} path="#/pdf-to-image" />
+      <SEO title={toolSEO.pdfToImage.title} description={toolSEO.pdfToImage.description} keywords={toolSEO.pdfToImage.keywords} path="/pdf-to-image" />
       <NativeToolLayout title="PDF to Image" description="Convert document pages into high-quality images." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       {!pdfData ? (

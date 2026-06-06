@@ -44,13 +44,13 @@ I built **PaperKnife** to solve this. It's a collection of tools that run entire
 
 [<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroidButtonGreyBorder_nofont.png" height="80" alt="Get it at IzzyOnDroid">](https://apt.izzysoft.de/packages/com.paperknife.app)
 
-*   **On the Web:** Visit the [live site](https://potatameister.github.io/PaperKnife/). You can use it like any other website, or "install" it as a PWA for offline access.
+*   **On the Web:** Visit the [live site](https://pdfmachine.in/). You can use it like any other website, or "install" it as a PWA for offline access.
 
 ---
 
 ### Support the project
 
-PaperKnife is a solo project. It's open-source, ad-free, and tracker-free because I believe privacy is a right, not a luxury.
+PaperKnife is a solo project. It's open-source, ad-free, and tracker-free by default because I believe privacy is a right, not a luxury.
 
 If this tool has saved you time or kept your data safe, please consider:
 *   **Sponsoring:** Support development via [GitHub Sponsors](https://github.com/sponsors/potatameister).
@@ -62,6 +62,12 @@ If this tool has saved you time or kept your data safe, please consider:
 ### Under the hood
 
 PaperKnife is built with **React** and **TypeScript**. The core processing is handled by **pdf-lib** and **pdfjs-dist**, which run in a sandboxed environment using WebAssembly. The Android version is powered by **Capacitor**.
+
+Firebase Analytics is configured for anonymous route-level page views. It can be disabled by setting:
+
+```env
+VITE_FIREBASE_ANALYTICS_ENABLED=false
+```
 
 This project is licensed under the **GNU AGPL v3** to ensure it remains open and transparent forever.
 

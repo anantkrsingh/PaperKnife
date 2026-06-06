@@ -75,7 +75,7 @@ export default function UnlockTool() {
 
   return (
     <>
-      <SEO title={toolSEO.unlock.title} description={toolSEO.unlock.description} keywords={toolSEO.unlock.keywords} path="#/unlock" />
+      <SEO title={toolSEO.unlock.title} description={toolSEO.unlock.description} keywords={toolSEO.unlock.keywords} path="/unlock" />
       <NativeToolLayout title="Unlock PDF" description="Remove passwords and restrictions permanently. Processed locally." actions={pdfData && !objectUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={handleFileSelect} />
       {!pdfData ? (

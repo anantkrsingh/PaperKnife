@@ -9,6 +9,7 @@ import { NativeToolLayout } from './tools/shared/NativeToolLayout'
 import { PDFMachineLogo } from './Logo'
 import SEO from './SEO'
 import { toolSEO } from '../utils/seoData'
+import { isFirebaseAnalyticsEnabled } from '../utils/firebaseAnalytics'
 
 // --- WEB VERSION (TITAN HIGH-DENSITY) ---
 const PrivacyWeb = () => {
@@ -66,7 +67,9 @@ const PrivacyWeb = () => {
             </div>
             <h3 className="font-black text-sm uppercase tracking-widest dark:text-white">Zero Telemetry</h3>
             <p className="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed font-medium">
-              No tracking pixels. No cookies. No user IDs. We have no way of knowing how many files you process or who you are.
+              {isFirebaseAnalyticsEnabled
+                ? 'Firebase Analytics is enabled for anonymous route usage only. Document names, file contents, and processing activity never leave your device.'
+                : 'Analytics is disabled in this build. No tracking pixels, cookies, or user identifiers are collected by PDFMachine.'}
             </p>
           </div>
 
@@ -137,7 +140,9 @@ const PrivacyAPK = () => {
            <PrivacyItem 
              icon={EyeOff} 
              title="No Telemetry" 
-             desc="We use zero tracking, analytics, or user identifiers. Your usage is completely invisible to us." 
+             desc={isFirebaseAnalyticsEnabled
+               ? 'Firebase Analytics records anonymous route usage only. Document names, file contents, and processing activity stay on your device.'
+               : 'Analytics is disabled in this build. No tracking, analytics, or user identifiers are collected by PDFMachine.'} 
              color="text-blue-500 bg-blue-50 dark:bg-blue-900/20"
            />
            <PrivacyItem 
@@ -197,7 +202,7 @@ export default function PrivacyPolicy() {
 
   return (
     <>
-      <SEO title={toolSEO.privacy.title} description={toolSEO.privacy.description} keywords={toolSEO.privacy.keywords} path="#/privacy" />
+      <SEO title={toolSEO.privacy.title} description={toolSEO.privacy.description} keywords={toolSEO.privacy.keywords} path="/privacy" />
       {isAndroidView ? <PrivacyAPK /> : <PrivacyWeb />}
     </>
   )

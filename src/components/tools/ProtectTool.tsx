@@ -103,7 +103,7 @@ export default function ProtectTool() {
 
   return (
     <>
-      <SEO title={toolSEO.protect.title} description={toolSEO.protect.description} keywords={toolSEO.protect.keywords} path="#/protect" />
+      <SEO title={toolSEO.protect.title} description={toolSEO.protect.description} keywords={toolSEO.protect.keywords} path="/protect" />
       <NativeToolLayout title="Protect PDF" description="Add strong encryption to your documents. Processed locally." actions={pdfData && !pdfData.isLocked && !objectUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={handleFileSelect} />
       {!pdfData ? (

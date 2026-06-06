@@ -159,7 +159,7 @@ export default function MetadataTool() {
 
   return (
     <>
-      <SEO title={toolSEO.metadata.title} description={toolSEO.metadata.description} keywords={toolSEO.metadata.keywords} path="#/metadata" />
+      <SEO title={toolSEO.metadata.title} description={toolSEO.metadata.description} keywords={toolSEO.metadata.keywords} path="/metadata" />
       <NativeToolLayout title="Metadata Editor" description="Edit or wipe document properties for better privacy." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButtons />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       {!pdfData ? (

@@ -385,7 +385,7 @@ export default function MergeTool() {
         title={toolSEO.merge.title}
         description={toolSEO.merge.description}
         keywords={toolSEO.merge.keywords}
-        path="#/merge"
+        path="/merge"
       />
       <NativeToolLayout
         title="Merge PDF"

@@ -283,7 +283,7 @@ export default function About({ viewMode }: { viewMode?: ViewMode }) {
   const isAndroid = viewMode === 'android' || (viewMode === undefined && Capacitor.isNativePlatform())
   return (
     <>
-      <SEO title={toolSEO.about.title} description={toolSEO.about.description} keywords={toolSEO.about.keywords} path="#/about" />
+      <SEO title={toolSEO.about.title} description={toolSEO.about.description} keywords={toolSEO.about.keywords} path="/about" />
       {isAndroid ? <AboutAPK /> : <AboutWeb />}
     </>
   )

@@ -107,7 +107,7 @@ export default function PageNumberTool() {
 
   return (
     <>
-      <SEO title={toolSEO.pageNumbers.title} description={toolSEO.pageNumbers.description} keywords={toolSEO.pageNumbers.keywords} path="#/page-numbers" />
+      <SEO title={toolSEO.pageNumbers.title} description={toolSEO.pageNumbers.description} keywords={toolSEO.pageNumbers.keywords} path="/page-numbers" />
       <NativeToolLayout title="Page Numbers" description="Add custom numbering to your PDF automatically." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       

@@ -141,7 +141,7 @@ export default function ExtractImagesTool() {
 
   return (
     <>
-      <SEO title={toolSEO.extractImages.title} description={toolSEO.extractImages.description} keywords={toolSEO.extractImages.keywords} path="#/extract-images" />
+      <SEO title={toolSEO.extractImages.title} description={toolSEO.extractImages.description} keywords={toolSEO.extractImages.keywords} path="/extract-images" />
       <NativeToolLayout title="Extract Images" description="Find and save all original images embedded inside the PDF." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       {!pdfData ? (

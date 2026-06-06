@@ -114,7 +114,7 @@ export default function PdfToTextTool() {
 
   return (
     <>
-      <SEO title={toolSEO.pdfToText.title} description={toolSEO.pdfToText.description} keywords={toolSEO.pdfToText.keywords} path="#/pdf-to-text" />
+      <SEO title={toolSEO.pdfToText.title} description={toolSEO.pdfToText.description} keywords={toolSEO.pdfToText.keywords} path="/pdf-to-text" />
       <NativeToolLayout title="PDF to Text" description="Extract text using fast scan or deep local OCR." actions={pdfData && !pdfData.isLocked && !extractedText && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       {!pdfData ? (

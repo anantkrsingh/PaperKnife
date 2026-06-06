@@ -74,7 +74,7 @@ export default function ImageToPdfTool() {
 
   return (
     <>
-      <SEO title={toolSEO.imageToPdf.title} description={toolSEO.imageToPdf.description} keywords={toolSEO.imageToPdf.keywords} path="#/image-to-pdf" />
+      <SEO title={toolSEO.imageToPdf.title} description={toolSEO.imageToPdf.description} keywords={toolSEO.imageToPdf.keywords} path="/image-to-pdf" />
       <NativeToolLayout title="Image to PDF" description="Convert photos and images into a professional PDF." actions={images.length > 0 && !downloadUrl && <ActionButton />}>
       <input type="file" multiple accept="image/*" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files && handleFiles(e.target.files)} />
       {images.length === 0 ? (

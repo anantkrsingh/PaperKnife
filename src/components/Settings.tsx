@@ -108,7 +108,7 @@ export default function Settings({ theme, setTheme }: { theme: Theme, setTheme: 
 
   return (
     <>
-      <SEO title={toolSEO.settings.title} description={toolSEO.settings.description} keywords={toolSEO.settings.keywords} path="#/settings" />
+      <SEO title={toolSEO.settings.title} description={toolSEO.settings.description} keywords={toolSEO.settings.keywords} path="/settings" />
       <NativeToolLayout title="System" description="Core Configuration" actions={null}>
       <div className="animate-in fade-in slide-in-from-bottom-2 duration-500 pb-40">
         

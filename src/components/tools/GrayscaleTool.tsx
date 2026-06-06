@@ -127,7 +127,7 @@ export default function GrayscaleTool() {
 
   return (
     <>
-      <SEO title={toolSEO.grayscale.title} description={toolSEO.grayscale.description} keywords={toolSEO.grayscale.keywords} path="#/grayscale" />
+      <SEO title={toolSEO.grayscale.title} description={toolSEO.grayscale.description} keywords={toolSEO.grayscale.keywords} path="/grayscale" />
       <NativeToolLayout title="PDF to Grayscale" description="Remove colors from your PDF to save ink and storage." actions={pdfData && !pdfData.isLocked && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       {!pdfData ? (

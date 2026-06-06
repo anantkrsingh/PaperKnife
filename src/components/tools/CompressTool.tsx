@@ -242,7 +242,7 @@ export default function CompressTool() {
 
   return (
     <>
-      <SEO title={toolSEO.compress.title} description={toolSEO.compress.description} keywords={toolSEO.compress.keywords} path="#/compress" />
+      <SEO title={toolSEO.compress.title} description={toolSEO.compress.description} keywords={toolSEO.compress.keywords} path="/compress" />
       <NativeToolLayout title="Compress PDF" description="Reduce file size while maintaining quality. Everything stays on your device." actions={files.length > 0 && !showSuccess && <ActionButton />}>
       <input type="file" multiple accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files && handleFiles(e.target.files)} />
       

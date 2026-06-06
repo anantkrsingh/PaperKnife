@@ -93,7 +93,7 @@ export default function Thanks() {
   if (isNative) {
     return (
       <>
-        <SEO title={toolSEO.thanks.title} description={toolSEO.thanks.description} keywords={toolSEO.thanks.keywords} path="#/thanks" />
+        <SEO title={toolSEO.thanks.title} description={toolSEO.thanks.description} keywords={toolSEO.thanks.keywords} path="/thanks" />
         <NativeToolLayout title="Credits" description="Hall of Fame & Ecosystem" actions={null}>
           <div className="pb-20">
             {content}
@@ -105,7 +105,7 @@ export default function Thanks() {
 
   return (
     <>
-      <SEO title={toolSEO.thanks.title} description={toolSEO.thanks.description} keywords={toolSEO.thanks.keywords} path="#/thanks" />
+      <SEO title={toolSEO.thanks.title} description={toolSEO.thanks.description} keywords={toolSEO.thanks.keywords} path="/thanks" />
       <div className="min-h-full bg-[#FAFAFA] dark:bg-black text-gray-900 dark:text-zinc-100 selection:bg-rose-500 selection:text-white transition-colors duration-300">
         <main className="max-w-4xl mx-auto px-6 py-12 md:py-16">
           {content}

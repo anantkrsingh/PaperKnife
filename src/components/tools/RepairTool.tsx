@@ -66,7 +66,7 @@ export default function RepairTool() {
 
   return (
     <>
-      <SEO title={toolSEO.repair.title} description={toolSEO.repair.description} keywords={toolSEO.repair.keywords} path="#/repair" />
+      <SEO title={toolSEO.repair.title} description={toolSEO.repair.description} keywords={toolSEO.repair.keywords} path="/repair" />
       <NativeToolLayout title="Repair PDF" description="Fix corrupted or unreadable PDF files by rebuilding structure." actions={originalFile && !downloadUrl && <ActionButton />}>
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       

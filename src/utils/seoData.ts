@@ -91,7 +91,7 @@ export const toolSEO = {
   },
   privacy: {
     title: 'Privacy Policy',
-    description: 'PDFMachine Privacy Policy. Your files never leave your device. Zero data collection, zero tracking.',
+    description: 'PDFMachine Privacy Policy. Your files never leave your device. Optional analytics only records anonymous route usage when enabled.',
     keywords: 'privacy policy, data privacy, pdf privacy, secure pdf tools, no upload pdf'
   },
   settings: {
