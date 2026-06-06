@@ -134,7 +134,7 @@ export default function RearrangeTool() {
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       
       {!pdfData ? (
-        <div onClick={() => !isProcessing && fileInputRef.current?.click()} className="border-4 border-dashed border-gray-100 dark:border-zinc-900 rounded-[2.5rem] p-12 text-center hover:bg-rose-50 dark:hover:bg-rose-900/10 transition-all cursor-pointer group">
+        <div onClick={() => !isProcessing && fileInputRef.current?.click()} className="border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 rounded-[1.5rem] p-12 text-center shadow-xl shadow-gray-200/70 dark:shadow-black/30 hover:border-rose-300 dark:hover:border-rose-700 hover:shadow-2xl hover:shadow-rose-500/10 transition-all cursor-pointer group">
           <div className="w-20 h-20 bg-rose-50 dark:bg-rose-900/20 text-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform"><Grid size={32} /></div>
           <h3 className="text-xl font-bold dark:text-white mb-2">Select PDF</h3>
           <p className="text-sm text-gray-400 font-medium">Tap to start reordering</p>

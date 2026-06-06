@@ -442,7 +442,7 @@ export default function MergeTool() {
                 <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">
                   {files.length} Files • {totalPages} Pages
                 </p>
-                <button onClick={() => { setFiles([]); clearUrls(); clearWorkspace('merge'); }} className="text-[10px] font-black uppercase text-rose-500/60 hover:text-rose-500 transition-colors font-bold">Clear All</button>
+                <button onClick={() => { setFiles([]); clearUrls(); clearWorkspace('merge'); }} className="text-[10px] uppercase text-rose-500/60 hover:text-rose-500 transition-colors">Clear All</button>
               </div>
 
               <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
@@ -477,7 +477,7 @@ export default function MergeTool() {
           ) : (
             <button 
               onClick={() => !isProcessing && fileInputRef.current?.click()}
-              className="w-full border-4 border-dashed border-gray-100 dark:border-zinc-900 rounded-[2.5rem] p-12 text-center hover:bg-rose-50 dark:hover:bg-rose-900/10 transition-all cursor-pointer group"
+              className="w-full border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 rounded-[1.5rem] p-12 text-center shadow-xl shadow-gray-200/70 dark:shadow-black/30 hover:border-rose-300 dark:hover:border-rose-700 hover:shadow-2xl hover:shadow-rose-500/10 transition-all cursor-pointer group"
             >
                <div className="w-20 h-20 bg-rose-50 dark:bg-rose-900/20 text-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-inner">
                   <Upload size={32} />

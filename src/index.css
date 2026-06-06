@@ -35,7 +35,7 @@
 }
 
 html, body {
-  @apply bg-[#FAFAFA] dark:bg-black;
+  @apply bg-[#f7f9ff];
   margin: 0;
   padding: 0;
   height: 100%;
@@ -44,7 +44,7 @@ html, body {
 
 body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  @apply text-gray-900 dark:text-zinc-100 bg-[#FAFAFA] dark:bg-black transition-colors duration-500 ease-in-out;
+  @apply text-gray-900 bg-[#f7f9ff] transition-colors duration-500 ease-in-out;
   overflow-x: hidden;
 }
 
@@ -56,6 +56,11 @@ body {
 /* Specific component transitions */
 header, footer, nav, aside, main, section, div, button, input, select {
   transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+::selection {
+  background: rgba(239, 71, 111, 0.18);
+  color: #111827;
 }
 
 .pt-safe {
@@ -80,9 +85,18 @@ header, footer, nav, aside, main, section, div, button, input, select {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-200 dark:bg-zinc-800 rounded-full;
+  @apply bg-gray-200 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-300 dark:bg-zinc-700;
+  @apply bg-gray-300;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

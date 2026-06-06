@@ -205,6 +205,7 @@ function App() {
   const [viewMode, setViewMode] = useState<ViewMode>(() => {
     return Capacitor.isNativePlatform() ? 'android' : 'web'
   })
+  const [homeSearchQuery, setHomeSearchQuery] = useState('')
   const [droppedFile, setDroppedFile] = useState<File | null>(null)
   const [showQuickDrop, setShowQuickDrop] = useState(false)
   const [theme, setTheme] = useState<Theme>(() => {
@@ -212,7 +213,7 @@ function App() {
       const savedTheme = localStorage.getItem('theme') as Theme
       if (savedTheme) return savedTheme
     }
-    return 'system'
+    return 'light'
   })
 
   const toggleTheme = () => {
@@ -330,7 +331,7 @@ function App() {
       <AnalyticsPageViewTracker />
       <ViewModeProvider viewMode={viewMode} setViewMode={setViewMode}>
         <PipelineProvider>
-          <Layout theme={theme === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme} toggleTheme={toggleTheme} tools={activeTools} onFileDrop={handleGlobalDrop} viewMode={viewMode}>
+          <Layout theme={theme === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme} toggleTheme={toggleTheme} tools={activeTools} onFileDrop={handleGlobalDrop} viewMode={viewMode} homeSearchQuery={homeSearchQuery} setHomeSearchQuery={setHomeSearchQuery}>
             <Toaster 
               position="top-center" 
               expand={true} 
@@ -370,7 +371,7 @@ function App() {
                   <>
                     <SEO />
                     {viewMode === 'web' ? (
-                      <WebView tools={activeTools} />
+                      <WebView tools={activeTools} searchQuery={homeSearchQuery} setSearchQuery={setHomeSearchQuery} />
                     ) : (
                       <AndroidView toggleTheme={toggleTheme} theme={theme === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme} onFileSelect={(file) => handleGlobalDrop([file] as any)} />
                     )}

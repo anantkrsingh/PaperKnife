@@ -107,7 +107,7 @@ export default function RotateTool() {
       <input type="file" accept=".pdf" className="hidden" ref={fileInputRef} onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])} />
       
       {!pdfData ? (
-        <div onClick={() => !isProcessing && fileInputRef.current?.click()} className="border-4 border-dashed border-gray-100 dark:border-zinc-900 rounded-[2.5rem] p-12 text-center hover:bg-rose-50 dark:hover:bg-rose-900/10 transition-all cursor-pointer group">
+        <div onClick={() => !isProcessing && fileInputRef.current?.click()} className="border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 rounded-[1.5rem] p-12 text-center shadow-xl shadow-gray-200/70 dark:shadow-black/30 hover:border-rose-300 dark:hover:border-rose-700 hover:shadow-2xl hover:shadow-rose-500/10 transition-all cursor-pointer group">
           <div className="w-20 h-20 bg-rose-50 dark:bg-rose-900/20 text-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform"><RotateCw size={32} /></div>
           <h3 className="text-xl font-bold dark:text-white mb-2">Select PDF</h3>
           <p className="text-sm text-gray-400">Tap to start rotating</p>
@@ -146,8 +146,8 @@ export default function RotateTool() {
             <div className="flex justify-between items-center mb-6">
               <h4 className="font-black uppercase tracking-widest text-[10px] text-gray-400">Page Preview</h4>
               <div className="flex gap-2">
-                <button onClick={rotateAll} className="text-[10px] font-black uppercase text-rose-500 flex items-center gap-1 font-bold"><RotateCw size={12}/> All</button>
-                <button onClick={() => setRotations({})} className="text-[10px] font-black uppercase text-gray-400 flex items-center gap-1 font-bold"><RefreshCcw size={12}/> Reset</button>
+                <button onClick={rotateAll} className="text-[10px] font-black uppercase text-rose-500 flex items-center gap-1"><RotateCw size={12}/> All</button>
+                <button onClick={() => setRotations({})} className="text-[10px] font-black uppercase text-gray-400 flex items-center gap-1"><RefreshCcw size={12}/> Reset</button>
               </div>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-h-[60vh] overflow-y-auto p-1 scrollbar-hide">

@@ -3,6 +3,7 @@ import { ArrowLeft } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { Capacitor } from '@capacitor/core'
 import ToolHeader from './ToolHeader'
+import { AppBar, Box, IconButton, Paper, Toolbar } from '@mui/material'
 
 interface NativeToolLayoutProps {
   title: string
@@ -31,44 +32,38 @@ export const NativeToolLayout = ({
   const showNativeHeader = isAndroidView
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#FAFAFA] dark:bg-black transition-colors">
-      {/* Ultra-Compact Native AppBar - Only shown in Android/Native mode on mobile */}
+    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', bgcolor: 'transparent' }}>
       {showNativeHeader && (
-        <header className="px-4 pt-safe pb-1 flex items-center justify-between sticky top-0 z-30 bg-[#FAFAFA]/95 dark:bg-black/95 backdrop-blur-xl md:hidden border-b border-gray-100 dark:border-white/5">
-          <div className="flex items-center gap-2 h-14">
-            <button 
-              onClick={onBack || (() => navigate(-1))}
-              className="w-10 h-10 flex items-center justify-center rounded-full active:bg-zinc-100 dark:active:bg-zinc-900 transition-colors -ml-1"
-            >
-              <ArrowLeft size={24} className="text-gray-900 dark:text-white" />
-            </button>
-            <h1 className="text-lg font-black tracking-tight text-gray-900 dark:text-white ml-1">{title}</h1>
-          </div>
-          <div className="w-10" />
-        </header>
+        <AppBar position="sticky" elevation={0} color="transparent" sx={{ display: { md: 'none' }, backdropFilter: 'blur(18px)', background: 'rgba(247, 249, 255, 0.88)', borderBottom: '1px solid', borderColor: 'divider', color: 'text.primary' }}>
+          <Toolbar sx={{ minHeight: 64, px: 2, display: 'flex', justifyContent: 'space-between' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <IconButton onClick={onBack || (() => navigate(-1))} sx={{ color: 'text.secondary', bgcolor: 'rgba(255,255,255,0.85)' }}>
+                <ArrowLeft size={24} />
+              </IconButton>
+              <Box component="h1" sx={{ m: 0, fontSize: '1.1rem', fontWeight: 900, letterSpacing: '-0.03em', color: 'text.primary' }}>{title}</Box>
+            </Box>
+            <Box sx={{ width: 40 }} />
+          </Toolbar>
+        </AppBar>
       )}
 
-      {/* Main Content Area */}
-      <main className={`flex-1 flex flex-col p-4 md:p-8 max-w-5xl mx-auto w-full ${actions ? 'pb-32 md:pb-8' : ''}`}>
-        {/* Web View Header (Only Visible on Desktop or when native header is hidden) */}
-        <div className={`${showNativeHeader ? 'hidden md:block' : 'block'} mb-8`}>
-           <ToolHeader title={title} description={description} />
-        </div>
+      <Box component="main" sx={{ flex: 1, display: 'flex', flexDirection: 'column', px: { xs: 2, md: 4 }, py: { xs: 2, md: 4 }, maxWidth: 1080, width: '100%', mx: 'auto', pb: actions ? { xs: 18, md: 4 } : { xs: 2, md: 4 } }}>
+        <Box sx={{ display: showNativeHeader ? { xs: 'none', md: 'block' } : 'block', mb: { xs: 3, md: 5 } }}>
+          <ToolHeader title={title} description={description} />
+        </Box>
 
-        {/* Content Wrapper */}
-        <div className="flex-1">
+        <Box sx={{ flex: 1 }}>
           {children}
-        </div>
-      </main>
+        </Box>
+      </Box>
 
-      {/* Grounded Bottom Action Bar */}
       {actions && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-black/95 backdrop-blur-xl border-t border-gray-100 dark:border-white/5 z-40 pb-[calc(env(safe-area-inset-bottom)+1rem)] shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
-           <div className="p-4 max-w-md mx-auto">
-             {actions}
-           </div>
-        </div>
+        <Paper elevation={10} sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 40, backdropFilter: 'blur(18px)', background: 'rgba(255,255,255,0.92)', borderTop: '1px solid', borderColor: 'divider', pb: 'calc(env(safe-area-inset-bottom) + 1rem)' }}>
+          <Box sx={{ p: 2, maxWidth: 480, mx: 'auto' }}>
+            {actions}
+          </Box>
+        </Paper>
       )}
-    </div>
+    </Box>
   )
 }
