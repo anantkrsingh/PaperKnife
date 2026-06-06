@@ -6,6 +6,7 @@
 import { useState, useMemo } from 'react'
 import { 
   ChevronRight as ChevronRightIcon, 
+  SearchIcon, 
   Sparkles as SparklesIcon
 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
