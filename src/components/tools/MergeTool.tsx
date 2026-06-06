@@ -501,6 +501,9 @@ export default function MergeTool() {
                 <p className="text-center text-[10px] font-black text-gray-400 uppercase tracking-widest animate-pulse">Processing on Device...</p>
              </div>
           )}
+          <div id="container-d018bbbbb7b42929a0d963525149aa26"></div>
+
+
 
           {objectUrl && (
             <div className="animate-in zoom-in duration-300">
